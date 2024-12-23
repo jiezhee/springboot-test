@@ -12,11 +12,6 @@ public final class SpringBeanUtil implements ApplicationContextAware {
 
     private static ApplicationContext ctx;
 
-    @PostConstruct
-    public void init(){
-        Object commonBo2 = getBean("commonBo2");
-    }
-
     /**
      * 通过spring配置文件中配置的bean id取得bean对象
      * @param id spring bean ID值

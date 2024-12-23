@@ -16,20 +16,18 @@ import java.util.concurrent.Executors;
 
 @Aspect
 @Component
-//lombok日志
 @Slf4j
-//@DependsOn("springBeanUtil")
 @Order(0)
-public class TestAspect {
+public class AspectAnnotation {
 
     private ExecutorService pool = Executors.newFixedThreadPool(5);
 
-    @Pointcut("@annotation(testAnnotation)")
-    public void annotationPointcut(TestAnnotation testAnnotation) {
+    @Pointcut("@annotation(myAnnotation)")
+    public void annotationPointcut(MyAnnotation myAnnotation) {
     }
 
-    @Around("annotationPointcut(testAnnotation)")
-    public Object around(ProceedingJoinPoint pjp, TestAnnotation testAnnotation) throws Throwable {
+    @Around("annotationPointcut(myAnnotation)")
+    public Object around(ProceedingJoinPoint pjp, MyAnnotation myAnnotation) throws Throwable {
         //获取请求方法
         Signature sig = pjp.getSignature();
         String method = pjp.getTarget().getClass().getName() + "." + sig.getName();
