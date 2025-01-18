@@ -1,6 +1,7 @@
 package com.eris.springboottest;
 
 import com.eris.springboottest.config.MyConfiguration;
+import com.eris.springboottest.factorybean.MyFactoryBeanImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -26,6 +27,8 @@ public class Application {
 //        testEnv(context);
 
         testBeanFactory(context);
+
+//        testFactoryBean(context);
     }
 
 
@@ -42,4 +45,8 @@ public class Application {
         System.out.println(obj1 == myObj1);
     }
 
+    public static void testFactoryBean(ConfigurableApplicationContext context) {
+        MyFactoryBeanImpl myFactoryBean = (MyFactoryBeanImpl) context.getBean("myFactoryBeanImpl");
+        System.out.println(myFactoryBean);
+    }
 }
