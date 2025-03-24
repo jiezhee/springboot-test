@@ -33,6 +33,11 @@ public final class SpringBeanUtil implements ApplicationContextAware {
         return ctx.getBean(clazz);
     }
 
+    public static <T> T getBean(String beanName, Class<T> beanClass) {
+        return ctx.getBean(beanName, beanClass);
+    }
+
+
     @Override
     public void setApplicationContext(ApplicationContext applicationcontext)
             throws BeansException {

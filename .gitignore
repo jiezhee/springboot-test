@@ -1,7 +1,8 @@
 HELP.md
 target/
 static/
-!.mvn/wrapper/maven-wrapper.jar
+!.mvn/
+wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
 

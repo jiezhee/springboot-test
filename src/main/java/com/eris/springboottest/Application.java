@@ -26,7 +26,7 @@ public class Application {
 
 //        testEnv(context);
 
-        testBeanFactory(context);
+//        testBeanFactory(context);
 
 //        testFactoryBean(context);
     }
