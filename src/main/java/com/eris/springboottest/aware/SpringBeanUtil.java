@@ -43,4 +43,8 @@ public final class SpringBeanUtil implements ApplicationContextAware {
             throws BeansException {
         ctx = applicationcontext;
     }
+
+    public static ApplicationContext getApplicationContext() {
+        return ctx;
+    }
 }
